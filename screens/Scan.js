@@ -7,6 +7,7 @@ import {
     StyleSheet
 } from "react-native"
 import { Camera, CameraType } from 'expo-camera';
+import { BarCodeScanner } from 'expo-barcode-scanner';
 
 import { COLORS, FONTS, SIZES, icons, images } from "../constants";
 
@@ -190,7 +191,16 @@ const Scan = ({navigation}) => {
         <View style={styles.container}>
             <Camera 
                 style={styles.camera} type={type}
-                onBarCodeScanned={onBarCodeRead}
+                onBarCodeScanned={(e) => onBarCodeRead(e)}
+                onCameraReady={requestPermission}
+                onMountError={() => console.log('error opening camera')}
+                barCodeScannerSettings={{
+                    barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr],
+                  }}
+                  BarCodeSize={{height:10,width:10}}
+                  BarCodePoint={
+                    {x:0,y:0}
+                  }
                 >
                 {renderHeader()}
                 {renderScanFocus()}

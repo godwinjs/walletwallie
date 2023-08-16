@@ -93,7 +93,7 @@ const SignUp = ({navigation}) => {
                         tintColor: COLORS.white
                     }}
                 />{/*inlined*/}
-                <Text style={{ marginLeft: SIZES.padding * 1.5, color: COLORS.white, ...FONTS.h4 }}>Sign Up</Text>
+                <Text style={{ marginLeft: SIZES.padding * 1.5, color: COLORS.white, ...FONTS.h4 }}>Sign In</Text>
             </TouchableOpacity>
         )
     }
@@ -135,11 +135,28 @@ const SignUp = ({navigation}) => {
                             borderBottomColor: COLORS.white,
                             borderBottomWidth: 1,
                             height: 40,
-                            color: COLORS.white,
+                            color: '#000',
                             ...FONTS.body3
                         }}
                         placeholder="Enter Full Name"
-                        placeholderTextColor={COLORS.white}
+                        placeholderTextColor={'gray'}
+                        selectionColor={COLORS.white}
+                    />
+                </View>
+                {/* Email */}
+                <View style={{ marginTop: SIZES.padding * 3 }}>
+                    <Text style={{ color: COLORS.lightGreen, ...FONTS.body3 }}>Email Address</Text>
+                    <TextInput
+                        style={{
+                            marginVertical: SIZES.padding,
+                            borderBottomColor: COLORS.white,
+                            borderBottomWidth: 1,
+                            height: 40,
+                            color: '#000',
+                            ...FONTS.body3
+                        }}
+                        placeholder="example@domain.com"
+                        placeholderTextColor={'gray'}
                         selectionColor={COLORS.white}
                     />
                 </View>
@@ -185,7 +202,7 @@ const SignUp = ({navigation}) => {
 
                             {/* Contry Code */}
                             <View style={{ justifyContent: 'center', marginLeft: 5 }}>
-                                <Text style={{ color: COLORS.white, ...FONTS.body3 }}>{selectedArea?.callingCode}</Text>
+                                <Text style={{ color: '#000', ...FONTS.body3 }}>{selectedArea?.callingCode}</Text>
                             </View>
                         </TouchableOpacity>
 
@@ -197,12 +214,12 @@ const SignUp = ({navigation}) => {
                                 borderBottomColor: COLORS.white,
                                 borderBottomWidth: 1,
                                 height: 40,
-                                color: COLORS.white,
+                                color: '#000',
                                 ...FONTS.body3
                             }}
                             keyboardType="phone-pad"
                             placeholder="Enter Phone Number"
-                            placeholderTextColor={COLORS.white}
+                            placeholderTextColor={'gray'}
                             selectionColor={COLORS.white}
                         />
                     </View>
@@ -216,11 +233,11 @@ const SignUp = ({navigation}) => {
                             borderBottomColor: COLORS.white,
                             borderBottomWidth: 1,
                             height: 40,
-                            color: COLORS.white,
+                            color: '#000',
                             ...FONTS.body3
                         }}
-                        placeholder="Enter Password"
-                        placeholderTextColor={COLORS.white}
+                        placeholder="Enter password"
+                        placeholderTextColor={'gray'}
                         selectionColor={COLORS.white}
                         secureTextEntry={!showPassword}
                     />
@@ -243,6 +260,24 @@ const SignUp = ({navigation}) => {
                             }}
                         />
                     </TouchableOpacity>
+                </View>
+                {/* Confirm Password */}
+                <View style={{ marginTop: SIZES.padding * 2 }}>
+                    <Text style={{ color: COLORS.lightGreen, ...FONTS.body3 }}>Confirm Password</Text>
+                    <TextInput
+                        style={{
+                            marginVertical: SIZES.padding,
+                            borderBottomColor: COLORS.white,
+                            borderBottomWidth: 1,
+                            height: 40,
+                            color: '#000',
+                            ...FONTS.body3
+                        }}
+                        placeholder="Enter password again"
+                        placeholderTextColor={'gray'}
+                        selectionColor={COLORS.white}
+                        secureTextEntry={!showPassword}
+                    />
                 </View>
 
             </View>

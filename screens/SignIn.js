@@ -1,11 +1,12 @@
 import React from "react"
 import {View, Text} from "react-native"
 
-const tab = () => {
+const SignIn = () => {
     return (
         <View>
+            <Text>SignIn</Text>
         </View>
     )
 }
 
-export default tab;
+export default SignIn;
